@@ -51,7 +51,7 @@ int main() {
     page_table = calloc(sizeof(page_t*), table_size);
 
     queue = malloc(sizeof(linked_page_queue_t));
-    int tid = linked_page_queue_init(queue);
+    linked_page_queue_init(queue);
 
     while (~scanf("%d", &page_num)) {
         page_t *tmp_page  = NULL;
@@ -59,7 +59,7 @@ int main() {
 
         tmp_page = malloc(sizeof(page_t));
 
-        int ttid = page_init(tmp_page, page_num);
+        page_init(tmp_page, page_num);
         page_idx = page_table_find(
                 (const page_t**) page_table, 
                 tmp_page, 
